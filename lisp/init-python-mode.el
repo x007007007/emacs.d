@@ -4,6 +4,10 @@
               auto-mode-alist))
 
 (require-package 'pip-requirements)
+(require-package 'jedi)
 
-
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(setq jedi:server-args '("--log-traceback")
+      
 (provide 'init-python-mode)
